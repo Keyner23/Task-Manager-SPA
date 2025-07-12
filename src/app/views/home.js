@@ -1,5 +1,9 @@
+
 export function home() {
   return `
+    <head>
+    <link rel="stylesheet" href="./src/css/home.css">
+    </head>
     <body>
     <header>
         <h2>Bienvenido a</h2>
@@ -7,11 +11,11 @@ export function home() {
     </header>
     <main>
         <div>
-            <a href="src/views/login.html">Iniciar Sesión</a>
-            <a href="src/views/register.html">Registrarse</a>
+            <a id="iniciar">Ingresar</a>
+            <a href="/register">Registrarse</a>
         </div>
     </main>
-    <script type="module" src="./src/js/main.js"></script>
 </body>
   `;
 }
+
