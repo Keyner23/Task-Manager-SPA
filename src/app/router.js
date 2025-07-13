@@ -1,5 +1,5 @@
 import { dashboardE } from "./views/dashboardE.js";
-import { home } from "./views/home.js";
+import { home, homeLogin, homeRegister } from "./views/home.js";
 import { login, loginValidation } from "./views/login.js";
 import { register } from "./views/register.js";
 
@@ -13,14 +13,20 @@ const routes = {
 function render(path) {
     const view = document.getElementById("view");
     const route = routes[path] || (() => "<h1>404 - Página no encontrada</h1>");
+
+    // Renderiza solo una vez
     view.innerHTML = route();
 
+
+    if (path==="/") {
+        homeLogin()
+        homeRegister()
+    }
+
     if (path === "/login") {
-        view.innerHTML = login();
         loginValidation();
     }
 }
-
 
 export function router() {
     document.body.addEventListener("click", (event) => {
